@@ -17,6 +17,10 @@
         ipcRenderer.send('prova',{nome: 'luca', cognome: 'rossi'});
       })
 
+      ipcRenderer.on('risposta',(e,data)=>{
+        console.log(data);
+      })
+
     </script>
 
   </body>

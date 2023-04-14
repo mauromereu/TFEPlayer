@@ -1,3 +1,4 @@
+const electron  = reqire('electron');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
@@ -6,9 +7,11 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+let mainWindow;
+
 const createWindow = () => {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -51,5 +54,7 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 ipcMain.on('prova',(e, data)=>{
-console.log(data);
+  console.log(data);
+  mainWindow.webContents.send('risposta', {nome:'marco',cognome:'verdi'});
+
 })
