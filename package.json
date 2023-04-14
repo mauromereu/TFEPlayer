@@ -1,6 +1,6 @@
 {
-  "name": "tfplayer",
-  "productName": "tfplayer",
+  "name": "tfeplayer",
+  "productName": "tfeplayer",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",

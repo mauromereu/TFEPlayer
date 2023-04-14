@@ -9,5 +9,15 @@
     <h1>TrueFire Electron Player</h1>
     <p>Welcome</p>
     <p>we are using Node.js <span id="node-version"></span></p>
+    <button id="bottone">Invia</button>
+    <script>
+      const {ipcRenderer} = require('electron');
+      const bottone = document.getElementById('bottone');
+      bottone.addEventListener('click',()=>{
+        ipcRenderer.send('prova',{nome: 'luca', cognome: 'rossi'});
+      })
+
+    </script>
+
   </body>
 </html>
